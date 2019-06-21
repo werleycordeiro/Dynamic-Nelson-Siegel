@@ -2,7 +2,7 @@
 # werleycordeiro@gmail.com
 
 # Lib
-python -m pip install --user numpy pandas matplotlib
+python -m pip install --user numpy pandas matplotlib #cmd
 
 import numpy as np
 import pandas as pd
