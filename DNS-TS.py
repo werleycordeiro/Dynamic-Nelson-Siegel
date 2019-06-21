@@ -1,3 +1,6 @@
+# author: Werley Cordeiro
+# werleycordeiro@gmail.com
+
 # Lib
 python -m pip install --user numpy pandas matplotlib
 
