@@ -56,5 +56,5 @@ def VARcoeff(betas,l):
  var= np.matmul(inv(np.matmul(XX.T,XX)),np.matmul(XX.T,YY)).T
  return(var)
 
-var = VARcoeff(betas=results[0],l=l)
+var = VARcoeff(betas=results[0],l=l) # Start point to pars$phi in Kalman-Filter-Dynamic-Nelson-Siegel
 
