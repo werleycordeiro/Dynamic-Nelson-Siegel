@@ -4,9 +4,10 @@
 # Lib
 python -m pip install --user numpy pandas matplotlib # cmd
 
+import os
 import numpy as np
 import pandas as pd
-import matplotlib.pyplot as plt
+# import matplotlib.pyplot as plt
 
 # Data
 url = "https://www.dropbox.com/s/inpnlugzkddp42q/bonds.csv?dl=1"
@@ -24,13 +25,9 @@ lam=0.0609
 
 #Loading matrix
 
-def Nelson_Siegel_factor_loadings(lam,m):
- c1 = np.ones(m.shape[0])
- c2 = (1-np.exp(-lam*m))/(lam*m)
- c3 = c2-np.exp(-lam*m)
- lambmat = np.vstack((c1,c2,c3)).T
- return(lambmat)
+# os.getcwd()
 
+import Nelson_Siegel_factor_loadings as Nelson_Siegel_factor_loadings 
 z = Nelson_Siegel_factor_loadings(lam=lam,m=m)
 
 # Betas and Yhat
