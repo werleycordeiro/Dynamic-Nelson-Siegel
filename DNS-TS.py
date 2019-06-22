@@ -38,16 +38,6 @@ results[0].head()
 results[1].head()
 
 # VAR(1) coeffient matrix
-
-from numpy.linalg import inv 
-
-def VARcoeff(betas,l):
- YY = betas.values # To convert a pandas dataframe to a numpy ndarray
- XX = np.column_stack((np.ones(betas.shape[0]),YY))
- XX = np.delete(XX,(l-1),axis=0)
- YY = np.delete(YY,0,axis=0)
- var= np.matmul(inv(np.matmul(XX.T,XX)),np.matmul(XX.T,YY)).T
- return(var)
-
+import VARcoeff as VARcoeff 
 var = VARcoeff(betas=results[0],l=l) # Start point to pars$phi in Kalman-Filter-Dynamic-Nelson-Siegel
 
