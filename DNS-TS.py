@@ -11,9 +11,9 @@ import pandas as pd
 
 # Data
 url = "https://www.dropbox.com/s/inpnlugzkddp42q/bonds.csv?dl=1"
-df = pd.read_csv(url,sep=';',index_col=0)
-df.head()
-df.tail()
+df = pd.read_csv(url,sep=';',index_col=0);
+df.head();
+df.tail();
 
 l=df.shape[0]
 
@@ -41,3 +41,29 @@ results[1].head()
 import VARcoeff as VARcoeff 
 var = VARcoeff(betas=results[0],l=l) # Start point to pars$phi in Kalman-Filter-Dynamic-Nelson-Siegel
 
+# Start point to DNS-baseline with Kalman filter
+
+para = np.zeros(36)
+
+# Start point to lambda
+
+para[0] = lam
+
+# Start point to pars$H
+
+para[1:18] = np.sqrt(np.diag(np.cov((df.values-results[1]).T)))
+
+# Start point to pars$phi
+
+para[18] = var[0,1];
+para[19] = var[0,2];
+para[20] = var[0,3];
+para[21] = var[1,1];
+para[22] = var[1,2];
+para[23] = var[1,3];
+para[24] = var[2,1];
+para[25] = var[2,2];
+para[26] = var[2,3];
+
+# Start point to pars$mu
+para[28:30] = np.mean(results[0]);
