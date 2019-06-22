@@ -32,18 +32,14 @@ z = Nelson_Siegel_factor_loadings(lam=lam,m=m)
 
 # Betas and Yhat
 
-from numpy.linalg import inv
-
-def Yhat_betas(Y,Z):
- beta = np.matmul(inv(np.matmul(z.T,z)),df.dot(z).T).T 
- Yhat = beta.dot(z.T)
- return(beta,Yhat)
-
+import Yhat_betas as Yhat_betas
 results = Yhat_betas(Y=df,Z=z)
 results[0].head()
 results[1].head()
 
 # VAR(1) coeffient matrix
+
+from numpy.linalg import inv 
 
 def VARcoeff(betas,l):
  YY = betas.values # To convert a pandas dataframe to a numpy ndarray
