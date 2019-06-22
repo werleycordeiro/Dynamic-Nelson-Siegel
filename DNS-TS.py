@@ -41,3 +41,8 @@ def Yhat_betas(Y,Z):
  beta = np.matmul(inv(np.matmul(z.T,z)),df.dot(z).T).T 
  Yhat = beta.dot(z.T)
  return(beta,Yhat)
+
+results = Yhat_betas(Y=df,Z=z)
+results[0].head()
+results[1].head()
+
