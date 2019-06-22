@@ -26,7 +26,7 @@ lam=0.0609
 #Loading matrix
 
 # os.getcwd()
-
+# os.chdir("")
 import Nelson_Siegel_factor_loadings as Nelson_Siegel_factor_loadings 
 z = Nelson_Siegel_factor_loadings(lam=lam,m=m)
 
