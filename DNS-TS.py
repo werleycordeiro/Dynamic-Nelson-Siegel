@@ -30,3 +30,5 @@ def Nelson_Siegel_factor_loadings(lam,m):
  c3 = c2-np.exp(-lam*m)
  lambmat = np.vstack((c1,c2,c3)).T
  return(lambmat)
+
+z = Nelson_Siegel_factor_loadings(lam=lam,m=m)
