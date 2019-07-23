@@ -70,4 +70,4 @@ para[28] = np.mean(results[0])[0];
 para[29] = np.mean(results[0])[1];
 para[30] = np.mean(results[0])[2];
 
-# Start point to pars$phi
+# Start point to pars$Q
