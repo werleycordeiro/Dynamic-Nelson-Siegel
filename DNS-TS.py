@@ -66,4 +66,8 @@ para[25] = var[2,2];
 para[26] = var[2,3];
 
 # Start point to pars$mu
-para[28:30] = np.mean(results[0]);
+para[28] = np.mean(results[0])[0];
+para[29] = np.mean(results[0])[1];
+para[30] = np.mean(results[0])[2];
+
+# Start point to pars$phi
