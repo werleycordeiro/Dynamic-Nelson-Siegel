@@ -74,7 +74,7 @@ para[30] = np.mean(results[0])[2];
 res = np.empty(((results[0].shape[0]-1),results[0].shape[1]))
 res[:] = np.nan
 
-res[i] = var[:,[1,2,3]]
+res[i] = np.matmul(var[:,[1,2,3]],)
 
 
 from numpy.linalg import cholesky
