@@ -73,8 +73,10 @@ para[29] = np.mean(results[0])[2];
 # Start point to matrix Q 
 res = np.empty(((results[0].shape[0]-1),results[0].shape[1]))
 res[:] = np.nan
+
 for i in range(0,results[0].shape[0]-1):
  res[i,] = np.matmul(var[:,[1,2,3]],np.array(results[0])[i,]) - np.array(results[0])[i+1,]
+ 
 from numpy.linalg import cholesky
 Q = cholesky(np.cov(res.T));
 para[30] = Q[0,0];
