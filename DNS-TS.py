@@ -43,7 +43,7 @@ var = VARcoeff(betas=results[0],l=l) # Start point to pars$phi in Kalman-Filter-
 
 # Start point to DNS-baseline with Kalman filter
 
-para = np.zeros(35)
+para = np.zeros(36)
 
 # Start point to lambda
 
@@ -66,9 +66,9 @@ para[25] = var[2,2];
 para[26] = var[2,3];
 
 # Start point to pars$mu
-para[26] = np.mean(results[0])[0];
-para[27] = np.mean(results[0])[1];
-para[28] = np.mean(results[0])[2];
+para[27] = np.mean(results[0])[0];
+para[28] = np.mean(results[0])[1];
+para[29] = np.mean(results[0])[2];
 
 # Start point to pars$Q
 res = np.empty(((results[0].shape[0]-1),results[0].shape[1]))
@@ -77,9 +77,9 @@ for i in range(0,results[0].shape[0]-1):
  res[i,] = np.matmul(var[:,[1,2,3]],np.array(results[0])[i,]) - np.array(results[0])[i+1,]
 from numpy.linalg import cholesky
 Q = cholesky(np.cov(res.T));
-para[28] = Q[0,0];
-para[29] = Q[1,0];
-para[30] = Q[1,1];
-para[31] = Q[2,0];
-para[32] = Q[2,1];
-para[33] = Q[2,2];
+para[30] = Q[0,0];
+para[31] = Q[1,0];
+para[32] = Q[1,1];
+para[33] = Q[2,0];
+para[34] = Q[2,1];
+para[35] = Q[2,2];
