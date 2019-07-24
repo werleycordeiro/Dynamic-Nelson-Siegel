@@ -39,7 +39,7 @@ results[1].head()
 
 # VAR(1) coeffient matrix
 import VARcoeff as VARcoeff 
-var = VARcoeff(betas=results[0],l=l) # Start point to pars$phi in Kalman-Filter-Dynamic-Nelson-Siegel
+var = VARcoeff(betas=results[0],l=l) # Start point to matrix phi in Kalman-Filter-Dynamic-Nelson-Siegel
 
 # Start point to DNS-baseline with Kalman filter
 
@@ -65,12 +65,12 @@ para[24] = var[2,1];
 para[25] = var[2,2];
 para[26] = var[2,3];
 
-# Start point to pars$mu
+# Start point to vector mu
 para[27] = np.mean(results[0])[0];
 para[28] = np.mean(results[0])[1];
 para[29] = np.mean(results[0])[2];
 
-# Start point to pars$Q
+# Start point to matrix Q 
 res = np.empty(((results[0].shape[0]-1),results[0].shape[1]))
 res[:] = np.nan
 for i in range(0,results[0].shape[0]-1):
